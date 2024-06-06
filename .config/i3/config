@@ -72,12 +72,14 @@ exec_always --no-startup-id /home/brett/.config/polybar/launch.sh
 # Start picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
+# Start Insync
+exec_always --no-startup-id /usr/bin/insync start
+
 # xss-lock for screen lock before suspend
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# Autostart custom scripts
-exec_always --no-startup-id i3-auto-layout
-exec --no-startup-id pasystray
+# Start insync
+exec --no-startup-id ~/.bin-personal/start_insync.sh
 
 # Disable i3bar (since you are using Polybar)
 exec_always --no-startup-id killall i3bar
@@ -87,6 +89,10 @@ exec --no-startup-id xfce4-power-manager
 
 # Feh to load background image
 exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/wonder-woman.jpg
+
+# Autostart custom scripts
+exec_always --no-startup-id i3-auto-layout
+exec --no-startup-id pasystray
 
 # ===============================
 # Application Keyboard Shortcuts
