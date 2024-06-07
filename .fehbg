@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/brett/Pictures/background-images/wonder-woman.jpg' 
+feh --no-fehbg --bg-scale '/home/brett/Pictures/insync-green.png' 
