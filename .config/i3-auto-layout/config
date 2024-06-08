@@ -1,0 +1,5 @@
+[layout]
+split_orientation = splith
+split_orientation_next = splitv
+split_orientation_next_next = splith
+split_orientation_next_next_next = splitv

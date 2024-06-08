@@ -92,7 +92,7 @@ exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images
 
 # Autostart custom scripts
 exec_always --no-startup-id i3-auto-layout
-exec --no-startup-id pasystray
+#exec --no-startup-id pasystray
 
 # ===============================
 # Application Keyboard Shortcuts
