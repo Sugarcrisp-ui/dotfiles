@@ -72,11 +72,11 @@ exec_always --no-startup-id /home/brett/.config/polybar/launch.sh
 # Start picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
-# Start Insync
-exec_always --no-startup-id /usr/bin/insync start
-
 # xss-lock for screen lock before suspend
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# bluetooth
+exec --no-startup-id blueman-applet
 
 # Start insync
 exec --no-startup-id ~/.bin-personal/start_insync.sh
@@ -86,6 +86,10 @@ exec_always --no-startup-id killall i3bar
 
 # xfce4-power-manager
 exec --no-startup-id xfce4-power-manager
+
+# clipboard
+#exec --no-startup-id copyq
+exec --no-startup-id diodon
 
 # Feh to load background image
 exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/wonder-woman.jpg
