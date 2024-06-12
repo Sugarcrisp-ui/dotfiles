@@ -9,29 +9,6 @@ export VISUAL='micro'
 #alias update='sudo apt update && sudo apt upgrade && flatpak update'
 alias update='sudo aptitude update && sudo aptitude safe-upgrade && flatpak update'
 
-# ExpressVPN
-alias es='expressvpn status'
-alias dis='expressvpn disconnect'
-
-function evpn() {
-    expressvpn disconnect
-    expressvpn connect $1
-}
-
-alias vn='evpn vn' # Vietnam
-alias gu='evpn gu' # Guam
-alias to='evpn cato' # Toronto
-alias hk1='evpn hk1' # Hong Kong 1
-alias sg='evpn sgju' # Singapore - Jurong
-alias jp='evpn jpto' # Japan - Tokyo
-alias lon='evpn uklo' # London
-alias la='evpn usla1' # Los Angeles 1
-alias sf='evpn ussf' # San Fransisco
-alias ko='evpn kr2' # South Korea 2
-alias ny='evpn usny' # New York 
-alias xv='evpn xv' # Pick for Me
-# Add other ExpressVPN aliases here
-
 # Micro editor
 alias mbp='micro ~/.bashrc-personal'
 
@@ -52,3 +29,6 @@ alias sysinfo='inxi -Fxxxrz'
 
 # Bluetooth
 alias blue='bluetoothctl'
+
+# Run previous command as sudo
+alias s='sudo $(history -p !!)'
