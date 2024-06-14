@@ -15,6 +15,9 @@ alias mbp='micro ~/.bashrc-personal'
 # Bash
 alias bashup='source ~/.bashrc'
 
+# Adding flags
+alias cp='cp -i'
+
 # Python
 alias transfer='python /home/brett/.bin-personal/transfer.py'
 alias backup='python ~/.bin-personal/file-backup-with-time.py'
@@ -26,6 +29,10 @@ alias toexternal='config-backup-to-external.sh'
 
 # System information
 alias sysinfo='inxi -Fxxxrz'
+
+# Shutdown or reboot
+alias ssn='sudo shutdown now'
+alias sr='sudo reboot'
 
 # Bluetooth
 alias blue='bluetoothctl'
