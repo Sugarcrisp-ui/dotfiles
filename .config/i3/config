@@ -69,17 +69,27 @@ exec --no-startup-id dex --autostart --environment i3
 # Polybar launch
 exec_always --no-startup-id /home/brett/.config/polybar/launch.sh
 
+# Disable cinnamon autostart programs when running i3
+exec --no-startup-id ~/.bin-personal/pre-i3.sh
+
 # Start picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # xss-lock for screen lock before suspend
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# PulseAudio system tray
+#exec --no-startup-id pasystray
+
+# Start Brave browser
+exec --no-startup-id brave-browser
+
 # bluetooth
 exec --no-startup-id blueman-applet
 
 # Start insync
-exec --no-startup-id ~/.bin-personal/start_insync.sh
+#exec_always --no-startup-id export DISPLAY=:0 && /home/brett/.bin-personal/insync-tray-monitor.sh
+exec --no-startup-id insync start --no-daemon
 
 # Disable i3bar (since you are using Polybar)
 exec_always --no-startup-id killall i3bar
@@ -88,8 +98,8 @@ exec_always --no-startup-id killall i3bar
 exec --no-startup-id xfce4-power-manager
 
 # clipboard
-#exec --no-startup-id copyq
-exec --no-startup-id diodon
+exec --no-startup-id ~/.bin-personal/copyq-start.sh
+#exec --no-startup-id diodon
 
 # Feh to load background image
 exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/wonder-woman.jpg
