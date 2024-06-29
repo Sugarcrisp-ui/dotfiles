@@ -94,12 +94,14 @@ exec --no-startup-id insync start --no-daemon
 # Disable i3bar (since you are using Polybar)
 exec_always --no-startup-id killall i3bar
 
+# Control default audio sink
+#exec --no-startup-id ~/.bin-personal/default-sink-switch.sh
+
 # xfce4-power-manager
 exec --no-startup-id xfce4-power-manager
 
 # clipboard
-exec --no-startup-id ~/.bin-personal/copyq-start.sh
-#exec --no-startup-id diodon
+exec --no-startup-id diodon
 
 # Feh to load background image
 exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/wonder-woman.jpg
