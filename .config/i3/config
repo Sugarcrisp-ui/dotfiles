@@ -107,8 +107,12 @@ exec --no-startup-id diodon
 exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/wonder-woman.jpg
 
 # Autostart custom scripts
+
+# Run i3 auto layout script
 exec_always --no-startup-id i3-auto-layout
-#exec --no-startup-id pasystray
+
+# Run bluetooth monitor script
+exec --no-startup-id ~/.bin-personal/bluetooth-monitor.sh
 
 # ===============================
 # Application Keyboard Shortcuts
