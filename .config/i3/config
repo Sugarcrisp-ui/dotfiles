@@ -88,14 +88,11 @@ exec --no-startup-id brave-browser
 exec --no-startup-id blueman-applet
 
 # Start insync
-#exec_always --no-startup-id export DISPLAY=:0 && /home/brett/.bin-personal/insync-tray-monitor.sh
+#exec_always --no-startup-id export DISPLAY=:0 && /home/brett/.bin-personal/start-insync.sh
 exec --no-startup-id insync start --no-daemon
 
 # Disable i3bar (since you are using Polybar)
 exec_always --no-startup-id killall i3bar
-
-# Control default audio sink
-#exec --no-startup-id ~/.bin-personal/default-sink-switch.sh
 
 # xfce4-power-manager
 exec --no-startup-id xfce4-power-manager

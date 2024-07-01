@@ -1,5 +1,5 @@
 # PATH setting
-export PATH="$PATH:/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.bin-personal"
+export PATH="$PATH:/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.bin-personal"
 
 # Default editor
 export EDITOR='micro'
