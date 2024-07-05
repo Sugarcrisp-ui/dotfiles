@@ -100,6 +100,9 @@ exec --no-startup-id xfce4-power-manager
 # clipboard
 exec --no-startup-id diodon
 
+# Start Pulseeffects
+exec --no-startup-id pulseeffects -w
+
 # Feh to load background image
 exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/wonder-woman.jpg
 
