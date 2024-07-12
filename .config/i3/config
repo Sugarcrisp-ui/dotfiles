@@ -114,6 +114,9 @@ exec_always --no-startup-id i3-auto-layout
 # Run bluetooth monitor script
 exec --no-startup-id ~/.bin-personal/bluetooth-monitor.sh
 
+# Start gnome policykit
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
 # ===============================
 # Application Keyboard Shortcuts
 # ===============================
