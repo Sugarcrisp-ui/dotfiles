@@ -81,8 +81,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # PulseAudio system tray
 #exec --no-startup-id pasystray
 
-# Start Brave browser
-exec --no-startup-id brave-browser
+# Start Web browser
+#exec --no-startup-id brave-browser
+exec --no-startup-id firefox
 
 # bluetooth
 exec --no-startup-id blueman-applet
