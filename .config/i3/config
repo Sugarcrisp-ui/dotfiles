@@ -82,8 +82,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #exec --no-startup-id pasystray
 
 # Start Web browser
-#exec --no-startup-id brave-browser
-exec --no-startup-id firefox
+exec --no-startup-id brave-browser
+#exec --no-startup-id firefox
 
 # bluetooth
 exec --no-startup-id blueman-applet
@@ -105,7 +105,7 @@ exec --no-startup-id diodon
 exec --no-startup-id pulseeffects -w
 
 # Feh to load background image
-exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/wonder-woman.jpg
+exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/tesla-car-3.jpeg
 
 # Autostart custom scripts
 
