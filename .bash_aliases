@@ -18,6 +18,9 @@ alias bashup='source ~/.bashrc'
 # Adding flags
 alias cp='cp -i'
 
+# Adding a alias to run notifacation history
+alias notif='~/.bin-personal/notifications-history.sh'
+
 # Python
 alias transfer='python /home/brett/.bin-personal/transfer.py'
 alias backup='python ~/.bin-personal/file-backup-with-time.py'
