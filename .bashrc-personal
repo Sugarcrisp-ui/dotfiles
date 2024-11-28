@@ -14,6 +14,9 @@ alias mbp='micro ~/.bashrc-personal'
 # Shortcut to start copyq flatpak
 alias copyq='flatpak run com.github.hluk.copyq'
 
+# Create a symlink
+alias symlink='~/.bin-personal/create-symlink.sh'
+
 # Bash
 alias bashup='source ~/.bashrc'
 
