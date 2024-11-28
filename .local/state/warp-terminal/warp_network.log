@@ -1,0 +1,136 @@
+[2024-11-28 23:28:01,132]: Request { method: POST, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("warpianwzlfqdq.dataplane.rudderstack.com")), port: None, path: "/v1/batch", query: None, fragment: None }, headers: {"x-warp-client-version": "v0.2024.11.19.08.02.stable_03", "x-warp-os-category": "Linux", "x-warp-os-name": "ArcoLinux", "x-warp-os-version": "rolling", "x-warp-os-linux-kernel-version": "6.12.1-arch1-1", "authorization": Sensitive, "content-type": "application/json"} }
+Body {
+  "batch": [
+    {
+      "type": "track",
+      "userId": "NxE07zbVt0Uzyd82PypkYYf7nDW2",
+      "anonymousId": "8bb6c42d-e6e0-4629-a148-48fff05289de",
+      "event": "Block Creation",
+      "properties": {
+        "payload": {
+          "block_finished_to_precmd_delay_ms": 33,
+          "honor_ps1_enabled": false,
+          "num_output_lines": 27,
+          "num_output_lines_truncated": 0,
+          "num_secrets_redacted": 0
+        },
+        "release_mode": "stable_release",
+        "tag": "v0.2024.11.19.08.02.stable_03"
+      },
+      "originalTimestamp": "2024-11-28T16:27:43.223594194Z",
+      "context": {
+        "os": {
+          "category": "Linux",
+          "linux_kernel_version": "6.12.1-arch1-1",
+          "name": "ArcoLinux",
+          "version": "rolling"
+        }
+      },
+      "integrations": {
+        "Amplitude": {
+          "session_id": 1732810888
+        }
+      }
+    },
+    {
+      "type": "track",
+      "userId": "NxE07zbVt0Uzyd82PypkYYf7nDW2",
+      "anonymousId": "8bb6c42d-e6e0-4629-a148-48fff05289de",
+      "event": "Block Creation",
+      "properties": {
+        "payload": {
+          "block_finished_to_precmd_delay_ms": 28,
+          "honor_ps1_enabled": false,
+          "num_output_lines": 1,
+          "num_output_lines_truncated": 0,
+          "num_secrets_redacted": 0
+        },
+        "release_mode": "stable_release",
+        "tag": "v0.2024.11.19.08.02.stable_03"
+      },
+      "originalTimestamp": "2024-11-28T16:27:48.871266822Z",
+      "context": {
+        "os": {
+          "category": "Linux",
+          "linux_kernel_version": "6.12.1-arch1-1",
+          "name": "ArcoLinux",
+          "version": "rolling"
+        }
+      },
+      "integrations": {
+        "Amplitude": {
+          "session_id": 1732810888
+        }
+      }
+    },
+    {
+      "type": "track",
+      "userId": "NxE07zbVt0Uzyd82PypkYYf7nDW2",
+      "anonymousId": "8bb6c42d-e6e0-4629-a148-48fff05289de",
+      "event": "Autosuggestion Inserted",
+      "properties": {
+        "payload": {
+          "buffer_length": 5,
+          "insertion_length": 13
+        },
+        "release_mode": "stable_release",
+        "tag": "v0.2024.11.19.08.02.stable_03"
+      },
+      "originalTimestamp": "2024-11-28T16:27:56.081861602Z",
+      "context": {
+        "os": {
+          "category": "Linux",
+          "linux_kernel_version": "6.12.1-arch1-1",
+          "name": "ArcoLinux",
+          "version": "rolling"
+        }
+      },
+      "integrations": {
+        "Amplitude": {
+          "session_id": 1732810888
+        }
+      }
+    },
+    {
+      "type": "track",
+      "userId": "NxE07zbVt0Uzyd82PypkYYf7nDW2",
+      "anonymousId": "8bb6c42d-e6e0-4629-a148-48fff05289de",
+      "event": "Block Creation",
+      "properties": {
+        "payload": {
+          "block_finished_to_precmd_delay_ms": 24,
+          "honor_ps1_enabled": false,
+          "num_output_lines": 8,
+          "num_output_lines_truncated": 0,
+          "num_secrets_redacted": 0
+        },
+        "release_mode": "stable_release",
+        "tag": "v0.2024.11.19.08.02.stable_03"
+      },
+      "originalTimestamp": "2024-11-28T16:28:00.350683798Z",
+      "context": {
+        "os": {
+          "category": "Linux",
+          "linux_kernel_version": "6.12.1-arch1-1",
+          "name": "ArcoLinux",
+          "version": "rolling"
+        }
+      },
+      "integrations": {
+        "Amplitude": {
+          "session_id": 1732810888
+        }
+      }
+    }
+  ],
+  "context": {
+    "os": {
+      "category": "Linux",
+      "linux_kernel_version": "6.12.1-arch1-1",
+      "name": "ArcoLinux",
+      "version": "rolling"
+    }
+  },
+  "originalTimestamp": "2024-11-28T16:28:01.132508474Z"
+}
+[2024-11-28 23:28:01,408]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("warpianwzlfqdq.dataplane.rudderstack.com")), port: None, path: "/v1/batch", query: None, fragment: None }, status: 200, headers: {"content-type": "text/plain; charset=utf-8", "date": "Thu, 28 Nov 2024 16:28:01 GMT", "server": "openresty/1.21.4.2", "vary": "Origin", "content-length": "2"} }
