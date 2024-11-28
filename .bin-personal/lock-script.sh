@@ -1,4 +1,0 @@
-#!/bin/bash
-betterlockscreen -l &
-#sleep 1
-#systemctl suspend

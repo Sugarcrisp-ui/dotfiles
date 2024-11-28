@@ -75,14 +75,7 @@ bindsym Control+$alt+m exec --no-startup-id xfce4-settings-manager
 bindsym $mod+x exec --no-startup-id archlinux-logout
 
 # Screen Lock
-# Check if we're on the laptop by using the hostname
-if [ "$(hostname)" = "brett-k501ux" ]; then
-    # Screen Lock for Laptop
-    bindsym Control+$alt+l exec "betterlockscreen -l && systemctl suspend"
-else
-    # Screen Lock for Desktop
-    bindsym Control+$alt+l exec betterlockscreen -l
-fi
+bindsym Control+Mod1+l exec --no-startup-id ~/.bin-personal/lock-screen.sh
 
 # Reload Configuration
 bindsym $mod+Shift+c reload
