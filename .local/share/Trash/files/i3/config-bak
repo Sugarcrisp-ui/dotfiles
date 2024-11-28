@@ -1,27 +1,15 @@
 # Color Definitions
-set $focusedBorderColor #6790EB #Sky blue
-set $unfocusedBorderColor #222222 #Dark gray, nearly black
-set $textColor #e5e5e5 #Light gray or platinum
-set $backgroundBorderColor #242424 #Very dark gray, almost black
+set $focusedBorderColor #6790EB
+set $unfocusedBorderColor #222222
+set $textColor #e5e5e5
+set $backgroundBorderColor #242424
 
-# Set mod keys
+# Key Definitions
 set $mod Mod4
 set $alt Mod1
 
-# Basic Settings
-set $terminal xfce4-terminal
-
-# Set your preferred browser (brave, firefox, chromium)
-set $browser brave
-
-# Set your preferred file manager (thunar, nemo, nautilus)
-set $fileManager thunar
-
-# Set your preferred editor (subl, code, geany)
-set $editor subl
-
 # Gaps Definitions
-gaps inner 0
+gaps inner 5
 gaps outer 0
 
 # Workspaces
@@ -62,20 +50,21 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# Xfce Application Launcher
+# Workspace Navigation
+bindsym $alt+Tab workspace next
+bindsym $alt+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+bindsym $alt+Ctrl+Right workspace next
+bindsym $alt+Ctrl+Left workspace prev
+
+# Xfce4 Application Launcher
 bindsym $alt+d exec --no-startup-id xfce4-appfinder
 
 # Rofi Application Launcher
 bindsym $mod+d exec rofi -show drun -font "Noto Sans 13"
 
-# Xfce settings manager
-bindsym Control+$alt+m exec --no-startup-id xfce4-settings-manager
-
 # Logout
 bindsym $mod+x exec --no-startup-id archlinux-logout
-
-# Screen Lock
-bindsym Control+$alt+l exec betterlockscreen -l
 
 # Reload Configuration
 bindsym $mod+Shift+c reload
@@ -85,7 +74,18 @@ bindsym $mod+Shift+r exec --no-startup-id i3-msg restart
 
 # Kill Window
 bindsym $mod+q kill
-bindsym --release $mod+Escape exec xkill
+
+# Mouse and Floating Windows
+floating_modifier $mod
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # Set default size and position for floating windows
 for_window[floating] resize set 800px 500px
@@ -96,42 +96,48 @@ default_orientation horizontal
 bindsym $mod+h split h
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
 
 # Autostart
-exec --no-startup-id $browser
-#exec --no-startup-id insync start & disown
-exec --no-startup-id nm-applet &
-exec --no-startup-id copyq &
-exec --no-startup-id pamac-tray &
-exec --no-startup-id blueman-applet &
-exec --no-startup-id pasystray &
+exec --no-startup-id brave
+exec --no-startup-id insync start & disown
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id copyq
+exec_always --no-startup-id pamac-tray
+exec_always --no-startup-id blueman-applet &
+exec --no-startup-id pasystray
 exec --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/tesla-car-2.jpeg &
-exec --no-startup-id protonvpn-app
-exec_always --no-startup-id autotiling
-#exec --no-startup-id numlockx on
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec_always --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+exec_always --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/tesla-car-2.jpeg &
+#exec_always --no-startup-id numlockx on
+
+# Screen Lock
+bindsym Control+$alt+l exec betterlockscreen -l
 
 # Application Keyboard Shortcuts
 # -------------------------------
-bindsym $mod+Return exec --no-startup-id $terminal;focus
+bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
 bindsym $mod+$alt+Return exec warp-terminal
-bindsym $mod+s exec --no-startup-id $editor
+bindsym Control+$alt+m exec --no-startup-id xfce4-settings-manager
+#bindsym $mod+s exec --no-startup-id geany
+bindsym $mod+s exec --no-startup-id subl
 bindsym Control+$alt+j exec --no-startup-id joplin-desktop
-bindsym $mod+Shift+Return exec --no-startup-id $fileManager
-bindsym $mod+w exec --no-startup-id $browser
+bindsym $mod+Shift+Return exec --no-startup-id thunar
+bindsym $mod+w exec --no-startup-id brave
 bindsym Control+$alt+f exec --no-startup-id firefox
-bindsym Control+$alt+p exec --no-startup-id xfce4-screenshooter
+bindsym --release $mod+Escape exec xkill
+bindsym Control+Shift+p exec --no-startup-id xfce4-screenshooter
 
 # Audio Control
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse set Master '5%+'"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse set Master '5%-'"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
 bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
-#bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-#bindsym XF86AudioNext exec --no-startup-id playerctl next
-#bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-#bindsym XF86AudioStop exec --no-startup-id playerctl stop
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
 # Screen Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
@@ -142,7 +148,6 @@ for_window[class=".*"] border pixel 4
 
 # Border Control
 # --------------------------------
-# Toggle window borders between normal, 2 pixel, and none.
 bindsym $mod+shift+b border pixel 4
 bindsym $mod+t border normal
 bindsym $mod+u border none

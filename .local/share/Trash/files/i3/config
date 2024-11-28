@@ -25,7 +25,7 @@ gaps inner 0
 gaps outer 0
 
 # Workspaces
-set $firstMonitor HDMI1
+set $firstMonitor eDP1
 set $secondMonitor HDMI2
 workspace 1 output $firstMonitor
 workspace 2 output $firstMonitor
