@@ -13,4 +13,55 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/brett/.config/polybar/config.ini" added="2024-11-28T07:40:23.449720Z" modified="2024-11-28T07:40:23.449725Z" visited="2024-11-28T07:40:23.449721Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Sublime Text" exec="&apos;sublime_text %u&apos;" modified="2024-11-28T07:40:23.449722Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/brett/.ssh" added="2024-11-28T07:49:51.700668Z" modified="2024-11-28T07:49:51.737120Z" visited="2024-11-28T07:49:51.700670Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2024-11-28T07:49:51.737118Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/brett/.local/share/applications/proton-drive.desktop" added="2024-11-28T07:51:35.097718Z" modified="2024-11-28T07:51:43.401894Z" visited="2024-11-28T07:51:35.097719Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-desktop"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-11-28T07:51:43.401890Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/brett/.ssh/config" added="2024-11-28T07:55:22.480406Z" modified="2024-11-28T07:55:35.841560Z" visited="2024-11-28T07:55:22.480408Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2024-11-28T07:55:22.733208Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2024-11-28T07:55:35.841556Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/brett/dotfiles/.bin-personal/start-protonvpn.sh" added="2024-11-28T16:37:23.311506Z" modified="2024-11-28T16:37:23.311557Z" visited="2024-11-28T16:37:23.311510Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-11-28T16:37:23.311542Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>
