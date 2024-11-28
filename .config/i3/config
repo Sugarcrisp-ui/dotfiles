@@ -109,7 +109,7 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/tesla-car-2.jpeg &
-exec --no-startup-id protonvpn-app
+exec --no-startup-id ~/.bin-personal/start-protonvpn.sh
 exec_always --no-startup-id autotiling
 #exec --no-startup-id numlockx on
 
