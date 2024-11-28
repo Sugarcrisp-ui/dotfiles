@@ -1,0 +1,50 @@
+# PATH setting
+export PATH="$PATH:/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.bin-personal:$HOME/bin"
+
+# Default editor
+export EDITOR='micro'
+export VISUAL='micro'
+
+# System update
+#alias update='sudo pacman -Syu && paru -Syu && flatpak update -y'
+
+# Micro editor
+alias mbp='micro ~/.bashrc-personal'
+
+# Shortcut to start copyq flatpak
+alias copyq='flatpak run com.github.hluk.copyq'
+
+# Bash
+alias bashup='source ~/.bashrc'
+
+# Adding flags
+alias cp='cp -i'
+
+# Adding an alias to run notifacation history
+alias notif='~/.bin-personal/notifications-history.sh'
+
+# Download YouTube video
+#alias youtube='~/.bin-personal/youtube-download.sh'
+alias youtube='~/.bin-personal/youtube-download.py'
+
+# Python
+alias transfer='python /home/brett/.bin-personal/transfer.py'
+alias backup='python ~/.bin-personal/file-backup-with-time.py'
+
+# Configuration backup
+alias topersonal='sudo /home/brett/.bin-personal/config-backup-to-personal.sh'
+alias togithub='config-backup-github.sh'
+alias toexternal='config-backup-to-external.sh'
+
+# System information
+alias sysinfo='inxi -Fxxxrz'
+
+# Shutdown or reboot
+alias ssn='sudo shutdown now'
+alias sr='sudo reboot'
+
+# Bluetooth
+alias blue='bluetoothctl'
+
+# Run previous command as sudo
+alias s='sudo $(history -p !!)'
