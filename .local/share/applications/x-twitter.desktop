@@ -1,8 +1,1 @@
-[Desktop Entry]
-Name=X (Twitter)
-Comment=Stay up to date with X (Twitter)
-Exec=brave --app="https://x.com/home"
-Icon=/home/brett/Pictures/xtwitter-icon.png
-Terminal=false
-Type=Application
-Categories=Network;Social;
+/home/brett/dotfiles/.local/share/applications/x-twitter.desktop
