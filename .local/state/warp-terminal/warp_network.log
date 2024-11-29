@@ -209,3 +209,141 @@ Body {
   "originalTimestamp": "2024-11-29T13:13:21.604590943Z"
 }
 [2024-11-29 20:13:24,336]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("warpianwzlfqdq.dataplane.rudderstack.com")), port: None, path: "/v1/batch", query: None, fragment: None }, status: 200, headers: {"content-type": "text/plain; charset=utf-8", "date": "Fri, 29 Nov 2024 13:13:23 GMT", "server": "openresty/1.21.4.2", "vary": "Origin", "content-length": "2"} }
+[2024-11-29 20:13:54,338]: Request { method: POST, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("warpianwzlfqdq.dataplane.rudderstack.com")), port: None, path: "/v1/batch", query: None, fragment: None }, headers: {"x-warp-client-version": "v0.2024.11.19.08.02.stable_03", "x-warp-os-category": "Linux", "x-warp-os-name": "ArcoLinux", "x-warp-os-version": "rolling", "x-warp-os-linux-kernel-version": "6.12.1-arch1-1", "authorization": Sensitive, "content-type": "application/json"} }
+Body {
+  "batch": [
+    {
+      "type": "track",
+      "userId": "NxE07zbVt0Uzyd82PypkYYf7nDW2",
+      "anonymousId": "8bb6c42d-e6e0-4629-a148-48fff05289de",
+      "event": "Block Creation",
+      "properties": {
+        "payload": {
+          "block_finished_to_precmd_delay_ms": 38,
+          "honor_ps1_enabled": false,
+          "num_output_lines": 35,
+          "num_output_lines_truncated": 0,
+          "num_secrets_redacted": 0
+        },
+        "release_mode": "stable_release",
+        "tag": "v0.2024.11.19.08.02.stable_03"
+      },
+      "originalTimestamp": "2024-11-29T13:13:50.059131539Z",
+      "context": {
+        "os": {
+          "category": "Linux",
+          "linux_kernel_version": "6.12.1-arch1-1",
+          "name": "ArcoLinux",
+          "version": "rolling"
+        }
+      },
+      "integrations": {
+        "Amplitude": {
+          "session_id": 1732885833
+        }
+      }
+    }
+  ],
+  "context": {
+    "os": {
+      "category": "Linux",
+      "linux_kernel_version": "6.12.1-arch1-1",
+      "name": "ArcoLinux",
+      "version": "rolling"
+    }
+  },
+  "originalTimestamp": "2024-11-29T13:13:54.338082424Z"
+}
+[2024-11-29 20:13:54,655]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("warpianwzlfqdq.dataplane.rudderstack.com")), port: None, path: "/v1/batch", query: None, fragment: None }, status: 200, headers: {"content-type": "text/plain; charset=utf-8", "date": "Fri, 29 Nov 2024 13:13:54 GMT", "server": "openresty/1.21.4.2", "vary": "Origin", "content-length": "2"} }
+[2024-11-29 20:15:52,984]: Request { method: GET, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/client_version", query: Some("include_changelogs=false"), fragment: None }, headers: {"x-warp-client-version": "v0.2024.11.19.08.02.stable_03", "x-warp-os-category": "Linux", "x-warp-os-name": "ArcoLinux", "x-warp-os-version": "rolling", "x-warp-os-linux-kernel-version": "6.12.1-arch1-1", "authorization": Sensitive} }
+[2024-11-29 20:15:53,469]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/client_version", query: Some("include_changelogs=false"), fragment: None }, status: 200, headers: {"content-type": "application/json", "set-cookie": "rl_anonymous_id=f0a89651-8a78-4880-9673-60415bdb367e; Path=/; Domain=warp.dev; Max-Age=31536000", "x-frame-options": "DENY", "content-length": "624", "date": "Fri, 29 Nov 2024 13:15:53 GMT", "server": "Google Frontend", "traceparent": "00-ccc3bd4990040fbf7804e6c0b5ecee1d-7aa868c00318191d-00", "x-cloud-trace-context": "ccc3bd4990040fbf7804e6c0b5ecee1d/8838429442609518877", "via": "1.1 google", "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"} }
+[2024-11-29 20:20:41,821]: Request { method: POST, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/graphql", query: None, fragment: None }, headers: {"x-warp-client-version": "v0.2024.11.19.08.02.stable_03", "x-warp-os-category": "Linux", "x-warp-os-name": "ArcoLinux", "x-warp-os-version": "rolling", "x-warp-os-linux-kernel-version": "6.12.1-arch1-1", "content-type": "application/json", "authorization": Sensitive} }
+Body {
+  "variables": null,
+  "query": "query GetTeamsMetadataForUser {\n  user {\n    teams {\n      id\n      uid\n      name\n      creatorFirebaseUid\n      inviteCode {\n        code\n      }\n      members {\n        id\n        firebase_uid\n        email\n      }\n      pendingEmailInvites {\n        inviteeEmail\n        expired\n      }\n      inviteLinkDomainRestrictions {\n        uid\n        domain\n      }\n      isInviteLinkEnabled\n      isDiscoverable\n      billingMetadata {\n        customerType\n        delinquencyStatus\n        tier {\n          name\n          description\n          warpAiPolicy {\n            limit\n          }\n          teamSizePolicy {\n            isUnlimited\n            limit\n          }\n          sharedNotebooksPolicy {\n            isUnlimited\n            limit\n          }\n          sharedWorkflowsPolicy {\n            isUnlimited\n            limit\n          }\n          sessionSharingPolicy {\n            enabled\n            maxSessionBytesSize\n          }\n        }\n        serviceAgreements {\n          type\n          status\n          stripeSubscriptionId\n          currentPeriodEnd\n        }\n      }\n      stripeCustomerId\n      organizationSettings {\n        llmSettings {\n          enabled\n        }\n        telemetrySettings {\n          forceEnabled\n        }\n      }\n      isEligibleForDiscovery\n      hasBillingHistory\n    }\n    joinable_teams {\n      teamUid\n      numMembers\n      name\n      teamAcceptingInvites\n    }\n    is_eligible_for_reverse_team_trial\n    # We're temporarily piggy-backing off of the polled teams metadata\n    # query to also query experiment state.\n    experiments\n  }\n}\n",
+  "operationName": "GetTeamsMetadataForUser"
+}
+[2024-11-29 20:20:42,306]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/graphql", query: None, fragment: None }, status: 200, headers: {"content-type": "application/json", "set-cookie": "rl_anonymous_id=e3c9f9e2-3504-4f72-bca0-507c05886983; Path=/; Domain=warp.dev; Max-Age=31536000", "x-frame-options": "DENY", "content-length": "161", "date": "Fri, 29 Nov 2024 13:20:42 GMT", "server": "Google Frontend", "traceparent": "00-59aa740755ce5c0c17aaa3a8d92e17cb-1f24ce7fb1c8375a-00", "x-cloud-trace-context": "59aa740755ce5c0c17aaa3a8d92e17cb/2244145562176206682", "via": "1.1 google", "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"} }
+[2024-11-29 20:20:45,835]: Request { method: POST, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/graphql", query: None, fragment: None }, headers: {"x-warp-client-version": "v0.2024.11.19.08.02.stable_03", "x-warp-os-category": "Linux", "x-warp-os-name": "ArcoLinux", "x-warp-os-version": "rolling", "x-warp-os-linux-kernel-version": "6.12.1-arch1-1", "content-type": "application/json", "authorization": Sensitive} }
+Body {
+  "variables": {
+    "input": {
+      "folder": [
+        {
+          "actions_ts": null,
+          "metadata_ts": "2024-11-12T13:40:54.985067Z",
+          "objectId": "03FUpugLUf2ojoHBcQK4V2",
+          "objectUid": "03FUpugLUf2ojoHBcQK4V2",
+          "permissions_ts": "2024-11-12T13:40:54.985067Z",
+          "revision": {
+            "revisionTs": "2024-11-12T13:40:54.985067Z"
+          }
+        }
+      ],
+      "forceRefresh": false,
+      "genericStringObject": [],
+      "notebook": [
+        {
+          "actions_ts": null,
+          "metadata_ts": "2024-11-12T13:40:55.081581Z",
+          "objectId": "PSsNeiVRzRwAj0bUvNGWEn",
+          "objectUid": "PSsNeiVRzRwAj0bUvNGWEn",
+          "permissions_ts": "2024-11-12T13:40:55.081581Z",
+          "revision": {
+            "revisionTs": "2024-11-12T13:40:55.081581Z"
+          }
+        }
+      ],
+      "workflow": [
+        {
+          "actions_ts": null,
+          "metadata_ts": "2024-11-12T13:40:55.059754Z",
+          "objectId": "hgBi2dG9QOSpNwA6k7plHZ",
+          "objectUid": "hgBi2dG9QOSpNwA6k7plHZ",
+          "permissions_ts": "2024-11-12T13:40:55.059754Z",
+          "revision": {
+            "revisionTs": "2024-11-12T13:40:55.059754Z"
+          }
+        },
+        {
+          "actions_ts": null,
+          "metadata_ts": "2024-11-12T13:40:55.073204Z",
+          "objectId": "oQ7TyFCpmw2GrOGeWnA33h",
+          "objectUid": "oQ7TyFCpmw2GrOGeWnA33h",
+          "permissions_ts": "2024-11-12T13:40:55.073204Z",
+          "revision": {
+            "revisionTs": "2024-11-12T13:40:55.073204Z"
+          }
+        },
+        {
+          "actions_ts": null,
+          "metadata_ts": "2024-11-12T13:40:55.046472Z",
+          "objectId": "25BOxsnVMwBSshctUWKxZC",
+          "objectUid": "25BOxsnVMwBSshctUWKxZC",
+          "permissions_ts": "2024-11-12T13:40:55.046472Z",
+          "revision": {
+            "revisionTs": "2024-11-12T13:40:55.046472Z"
+          }
+        },
+        {
+          "actions_ts": null,
+          "metadata_ts": "2024-11-12T13:40:55.066778Z",
+          "objectId": "DXZX9eAIhoPNgRkmxCJPLL",
+          "objectUid": "DXZX9eAIhoPNgRkmxCJPLL",
+          "permissions_ts": "2024-11-12T13:40:55.066778Z",
+          "revision": {
+            "revisionTs": "2024-11-12T13:40:55.066778Z"
+          }
+        }
+      ]
+    }
+  },
+  "query": "fragment MetadataFields on ObjectMetadata {\n  UID\n  currentEditor {\n    email\n  }\n  metadataLastUpdatedTs\n  lastEditedBy {\n    firebase_uid\n  }\n  revision {\n    revisionTs\n  }\n  trashedTs\n  folderUid\n  isWelcomeObject\n  creator {\n    firebase_uid\n  }\n}\n\nfragment PermissionsFields on ObjectPermissions {\n  space {\n    id\n    uid\n    type\n  }\n  guests {\n    subject {\n      __typename\n      ... on UserGuest {\n        firebaseUid\n      }\n      ... on PendingUserGuest {\n        email\n      }\n    }\n    accessLevel\n    source {\n      __typename\n      ... on FolderContainer {\n        folderUid\n      }\n      ... on Space {\n        id\n        uid\n        type\n      }\n    }\n  }\n  anyoneLinkSharing {\n    accessLevel\n    source {\n      __typename\n      ... on FolderContainer {\n        folderUid\n      }\n      ... on Space {\n        id\n        uid\n        type\n      }\n    }\n  }\n  permissionsLastUpdatedTs\n}\n\nquery GetUpdatedCloudObjects($input: GetUpdatedCloudObjectsInput!) {\n  getUpdatedCloudObjects(input: $input) {\n    notebooks {\n      titleName\n      data\n      metadata {\n        ...MetadataFields\n      }\n      permissions {\n        ...PermissionsFields\n      }\n    }\n    workflows {\n      data\n      metadata {\n        ...MetadataFields\n      }\n      permissions {\n        ...PermissionsFields\n      }\n    }\n    folders {\n      name\n      metadata {\n        ...MetadataFields\n      }\n      permissions {\n        ...PermissionsFields\n      }\n    }\n    genericStringObjects {\n      serializedModel\n      format\n      metadata {\n        ...MetadataFields\n      }\n      permissions {\n        ...PermissionsFields\n      }\n    }\n    deletedObjectIds {\n      notebooks\n      notebookUIDs\n      workflows\n      workflowUIDs\n      folderUIDs\n      genericStringObjectUIDs\n    }\n    userProfiles {\n      email\n      display_name\n      photo_url\n      firebase_uid\n    }\n    actionHistories {\n      uid\n      objectType\n      actions {\n        __typename\n        ... on SingleAction {\n          actionType\n          timestamp\n          processedAtTimestamp\n        }\n        ... on BundledActions {\n          actionType\n          count\n          oldestTimestamp\n          latestTimestamp\n          latestProcessedAtTimestamp\n        }\n      }\n      latestProcessedAtTimestamp\n    }\n  }\n}\n",
+  "operationName": "GetUpdatedCloudObjects"
+}
+[2024-11-29 20:20:46,141]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/graphql", query: None, fragment: None }, status: 200, headers: {"content-type": "application/json", "set-cookie": "rl_anonymous_id=ba367b69-c864-41eb-9ace-5cd975adf3be; Path=/; Domain=warp.dev; Max-Age=31536000", "x-frame-options": "DENY", "content-length": "279", "date": "Fri, 29 Nov 2024 13:20:45 GMT", "server": "Google Frontend", "traceparent": "00-2000f23936038bf346529c9fcd94bf11-9aa48feeded4028b-00", "x-cloud-trace-context": "2000f23936038bf346529c9fcd94bf11/11143189634124874379", "via": "1.1 google", "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"} }
+[2024-11-29 20:25:52,985]: Request { method: POST, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("securetoken.googleapis.com")), port: None, path: "/v1/token", query: Some("key=AIzaSyBdy3O3S9hrdayLJxJ7mriBR4qgUaUygAs"), fragment: None }, headers: {"x-warp-client-version": "v0.2024.11.19.08.02.stable_03", "x-warp-os-category": "Linux", "x-warp-os-name": "ArcoLinux", "x-warp-os-version": "rolling", "x-warp-os-linux-kernel-version": "6.12.1-arch1-1", "content-type": "application/x-www-form-urlencoded"} }
+Body grant_type=refresh_token&refresh_token=AMf-vBzE5XL8y8kjYzhcyibk5IzD78gQ5hRIh0loYYcGr5uYFfZJWJ8r1eN4QNwKlczEZvdcvjLCLc-Y-Rpl-sF0tQrQ1xMF_vE0pStAiFUZ2TwRLIWXPxXK3XDmODhVnd6bNeBYUFLr95_5nKXX77ngaMi_K-e8umif9OrtpQi4UskKpJwU-Pg11tUtDKXGeKjSBwuRZreSkYma9ip6IEJ_PQnWz0PDqz_PFSwGuowK9kdiP7gFDxM
+[2024-11-29 20:25:53,454]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("securetoken.googleapis.com")), port: None, path: "/v1/token", query: Some("key=AIzaSyBdy3O3S9hrdayLJxJ7mriBR4qgUaUygAs"), fragment: None }, status: 200, headers: {"cache-control": "no-cache, no-store, max-age=0, must-revalidate", "expires": "Mon, 01 Jan 1990 00:00:00 GMT", "pragma": "no-cache", "date": "Fri, 29 Nov 2024 13:25:53 GMT", "content-type": "application/json; charset=UTF-8", "vary": "Origin", "vary": "X-Origin", "vary": "Referer", "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000", "server": "ESF", "x-content-type-options": "nosniff", "x-xss-protection": "0", "x-frame-options": "SAMEORIGIN"} }
+[2024-11-29 20:25:53,455]: Request { method: GET, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/client_version", query: Some("include_changelogs=false"), fragment: None }, headers: {"x-warp-client-version": "v0.2024.11.19.08.02.stable_03", "x-warp-os-category": "Linux", "x-warp-os-name": "ArcoLinux", "x-warp-os-version": "rolling", "x-warp-os-linux-kernel-version": "6.12.1-arch1-1", "authorization": Sensitive} }
+[2024-11-29 20:25:53,940]: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("app.warp.dev")), port: None, path: "/client_version", query: Some("include_changelogs=false"), fragment: None }, status: 200, headers: {"content-type": "application/json", "set-cookie": "rl_anonymous_id=0c615c8a-f974-430e-9094-319ae61adbfd; Path=/; Domain=warp.dev; Max-Age=31536000", "x-frame-options": "DENY", "content-length": "624", "date": "Fri, 29 Nov 2024 13:25:53 GMT", "server": "Google Frontend", "traceparent": "00-3035947a22b1bfb06679436f53596479-cee8ce1e8269b10c-00", "x-cloud-trace-context": "3035947a22b1bfb06679436f53596479/14909393196842332428", "via": "1.1 google", "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"} }
