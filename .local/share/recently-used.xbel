@@ -13,13 +13,13 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/brett/.config/polybar/config.ini" added="2024-11-28T07:40:23.449720Z" modified="2024-11-29T12:58:49.931735Z" visited="2024-11-28T07:40:23.449721Z">
+  <bookmark href="file:///home/brett/.config/polybar/config.ini" added="2024-11-28T07:40:23.449720Z" modified="2024-11-29T13:11:11.767887Z" visited="2024-11-28T07:40:23.449721Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/octet-stream"/>
         <bookmark:applications>
           <bookmark:application name="Sublime Text" exec="&apos;sublime_text %u&apos;" modified="2024-11-28T07:40:23.449722Z" count="1"/>
-          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-11-29T12:58:49.931733Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-11-29T13:11:11.767879Z" count="3"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -65,12 +65,12 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/brett/dotfiles/.config/polybar/config.ini" added="2024-11-29T12:59:49.953401Z" modified="2024-11-29T12:59:49.953410Z" visited="2024-11-29T12:59:49.953402Z">
+  <bookmark href="file:///home/brett/dotfiles/.config/polybar/config.ini" added="2024-11-29T12:59:49.953401Z" modified="2024-11-29T13:11:42.939997Z" visited="2024-11-29T12:59:49.953402Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/octet-stream"/>
         <bookmark:applications>
-          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-11-29T12:59:49.953405Z" count="1"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-11-29T13:11:42.939989Z" count="2"/>
         </bookmark:applications>
       </metadata>
     </info>
