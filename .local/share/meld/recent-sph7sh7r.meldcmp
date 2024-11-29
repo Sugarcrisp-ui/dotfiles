@@ -1,0 +1,4 @@
+[Comparison]
+type = File
+uris = file:///home/brett/i3wm/Personal/095-create-symlinks-from-dotfiles.sh;file:///home/brett/Downloads/095-symlink
+
