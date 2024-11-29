@@ -23,6 +23,11 @@ alias bashup='source ~/.bashrc'
 # Adding flags
 alias cp='cp -i'
 
+# Tab, tab completion for warp terminal
+   if [ -f /etc/bash_completion ]; then
+       . /etc/bash_completion
+   fi
+
 # Adding an alias to run notifacation history
 alias notif='~/.bin-personal/notifications-history.sh'
 
