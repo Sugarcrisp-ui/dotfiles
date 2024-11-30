@@ -1,4 +1,4 @@
-; thunar GtkAccelMap rc-file         -*- scheme -*-
+; Thunar GtkAccelMap rc-file         -*- scheme -*-
 ; this file is an automated accelerator map dump
 ;
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/637bb525dd8aacb3c6d60e8ea5816817" "")
@@ -52,7 +52,6 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/detach-tab" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/c328d79f4dde00387ba604ebe68f0094" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/760bb0f28f8959fb60bf9b5c39839779" "")
-(gtk_accel_path "<Actions>/ThunarActions/uca-action-open-terminal" "F4")
 ; (gtk_accel_path "<Actions>/ThunarWindow/cancel-search" "Escape")
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-in-alt2" "<Primary>equal")
 ; (gtk_accel_path "<Actions>/ThunarShortcutsPane/sendto-shortcuts" "<Primary>d")
@@ -74,6 +73,7 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/go-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/remove-from-recent" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/d2b854370982b866f7d34054012a5e26" "")
+(gtk_accel_path "<Actions>/ThunarActions/uca-action-open-terminal" "F4")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/open-with-other" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/invert-selection" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/arrange-items-menu" "")
@@ -81,9 +81,9 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-location-selector-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/edit-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/7a0c34d594169ee0f92e1e8aebcfe481" "")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/c380ebf217887a0a50c885e90391df5e" "")
-; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-mtime" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/copy" "<Primary>c")
+; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-mtime" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/c380ebf217887a0a50c885e90391df5e" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/move-to-trash" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/delete-3" "<Shift>KP_Delete")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/d3562f8ea1bd7b14bf671f4f75c52f54" "")
