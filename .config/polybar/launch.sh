@@ -23,6 +23,11 @@ for m in $(xrandr --query | grep "connected" | cut -d" " -f1); do
     # Launch laptop bar with config file and --reload 
     MONITOR=$m polybar --reload mainbar-i3-laptop -c ~/.config/polybar/config.ini
 
+  elif [ "$HOSTNAME" == "brett-virtualbox" ]; then
+
+    # Launch VM-specific bar with config file and --reload
+    MONITOR=$m polybar --reload mainbar-i3-vm -c ~/.config/polybar/config.ini
+
   else
     echo "Unknown hostname: $HOSTNAME"
   fi
