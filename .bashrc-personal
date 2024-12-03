@@ -1,21 +1,21 @@
 # PATH setting
-export PATH="$PATH:/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.bin-personal:$HOME/bin"
+export PATH="$HOME/.bin-personal:$HOME/bin:$PATH:/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # Default editor
 export EDITOR='micro'
 export VISUAL='micro'
 
 # System update
-#alias update='sudo pacman -Syu && paru -Syu && flatpak update -y'
+alias update='paru -Syu; flatpak update -y'
 
 # Micro editor
-alias mbp='micro ~/.bashrc-personal'
+alias mbp='micro $HOME/.bashrc-personal'
 
 # Shortcut to start copyq flatpak
 alias copyq='flatpak run com.github.hluk.copyq'
 
 # Create a symlink
-alias symlink='~/.bin-personal/create-symlink.sh'
+alias symlink='$HOME/.bin-personal/create-symlink.sh'
 
 # Bash
 alias bashup='source ~/.bashrc'
@@ -29,20 +29,26 @@ alias cp='cp -i'
    fi
 
 # Adding an alias to run notifacation history
-alias notif='~/.bin-personal/notifications-history.sh'
+alias notif='$HOME/.bin-personal/notifications-history.sh'
+
+# Use ripgrep instead of grep
+alias grep='rg'
+
+# Use fd instead of find for better search
+alias find='fd'
 
 # Download YouTube video
-#alias youtube='~/.bin-personal/youtube-download.sh'
-alias youtube='~/.bin-personal/youtube-download.py'
+#alias youtube='$HOME/.bin-personal/youtube-download.sh'
+alias youtube='$HOME/.bin-personal/youtube-download.py'
 
 # Python
-alias transfer='python /home/brett/.bin-personal/transfer.py'
-alias backup='python ~/.bin-personal/file-backup-with-time.py'
+alias transfer='python $HOME/.bin-personal/transfer.py'
+alias backup='python $HOME/.bin-personal/file-backup-with-time.py'
 
 # Configuration backup
-alias topersonal='sudo /home/brett/.bin-personal/config-backup-to-personal.sh'
-alias togithub='config-backup-github.sh'
-alias toexternal='config-backup-to-external.sh'
+alias topersonal='sudo $HOME/.bin-personal/config-backup-to-personal.sh'
+alias togithub='$HOME/.bin-personal/config-backup-github.sh'
+alias toexternal='$HOME/.bin-personal/config-backup-to-external.sh'
 
 # System information
 alias sysinfo='inxi -Fxxxrz'
