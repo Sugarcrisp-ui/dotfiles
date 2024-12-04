@@ -34,6 +34,9 @@ alias notif='$HOME/.bin-personal/notifications-history.sh'
 # Use ripgrep instead of grep
 alias grep='rg'
 
+# Edit pacman with micro
+alias mpacman='sudo micro /etc/pacman.conf'
+
 # Use fd instead of find for better search
 alias find='fd'
 
