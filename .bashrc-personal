@@ -31,14 +31,14 @@ alias cp='cp -i'
 # Adding an alias to run notifacation history
 alias notif='$HOME/.bin-personal/notifications-history.sh'
 
-# Use ripgrep instead of grep
-alias grep='rg'
-
 # Edit pacman with micro
 alias mpacman='sudo micro /etc/pacman.conf'
 
 # Use fd instead of find for better search
 alias find='fd'
+
+# Switch audio output back to hdmi
+alias tohdmi='pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo'
 
 # Download YouTube video
 #alias youtube='$HOME/.bin-personal/youtube-download.sh'
