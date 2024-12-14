@@ -108,8 +108,10 @@ exec --no-startup-id bluetooth-autoconnect &
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/tesla-car-2.jpeg &
-exec --no-startup-id ~/.bin-personal/start-protonvpn.sh
+exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/tesla-car-red-left-1920x1080.jpeg &
+# Currently using the browser extension which has split tunneling. I onlye
+# need to use the app when I use qbittorrent
+#exec --no-startup-id ~/.bin-personal/start-protonvpn.sh
 exec --no-startup-id eval "$(ssh-agent -s)"
 exec_always --no-startup-id pasystray &
 exec_always --no-startup-id autotiling

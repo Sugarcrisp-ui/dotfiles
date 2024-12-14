@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Google Finance Tesla
+Comment=
+Exec=brave --app="https://www.google.com/finance/quote/TSLA:NASDAQ?hl=en"
+Icon=/home/brett/Pictures/google-finance-icon.svg
+Terminal=false
+Type=Application
+Categories=Finance;
