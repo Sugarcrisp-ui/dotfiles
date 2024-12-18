@@ -14,13 +14,13 @@ export VISUAL='micro'
 alias update='paru -Syu; flatpak update -y'
 
 # Micro editor
-alias mbp='micro $HOME/.bashrc-personal'
+alias mbp='$EDITOR $HOME/.bashrc-personal'
 
 # Shortcut to start copyq flatpak
 alias copyq='flatpak run com.github.hluk.copyq'
 
 # Remove the locked pacman database
-alias pacman-lock='rm /var/lib/pacman/db.lck'
+alias pacman-lock='sudo rm /var/lib/pacman/db.lck'
 
 # Create a symlink
 alias symlink='$HOME/.bin-personal/create-symlink.sh'
@@ -44,7 +44,7 @@ alias toaux='pacmd set-card-profile 0 output:analog-stereo && pactl set-default-
 alias notif='$HOME/.bin-personal/notifications-history.sh'
 
 # Edit pacman with micro
-alias mpacman='sudo micro /etc/pacman.conf'
+alias mpacman='sudo $EDITOR /etc/pacman.conf'
 
 # Download YouTube video
 #alias youtube='$HOME/.bin-personal/youtube-download.sh'
@@ -70,4 +70,4 @@ alias sr='sudo reboot'
 alias blue='bluetoothctl'
 
 # Run previous command as sudo
-alias s='sudo $(history -p !!)'
+alias sh='sudo $(history -p !!)'
