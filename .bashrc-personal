@@ -40,9 +40,6 @@ alias toaux='pacmd set-card-profile 0 output:analog-stereo && pactl set-default-
        . /etc/bash_completion
    fi
 
-# Adding an alias to run notifacation history
-alias notif='$HOME/.bin-personal/notifications-history.sh'
-
 # Edit pacman with micro
 alias mpacman='sudo $EDITOR /etc/pacman.conf'
 
