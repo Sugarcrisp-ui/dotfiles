@@ -8,11 +8,30 @@ YELLOW=$(tput setaf 3)
 RED=$(tput setaf 1)
 RESET=$(tput sgr0)
 
+# Clear screen and show header
 clear
 echo "${BLUE}################################################################"
 echo "                    Symbolic Link Creator"
 echo "################################################################${RESET}"
 echo
+
+# Function to bind tab for proper completion
+bind 'TAB: complete' 2>/dev/null
+
+# Function to read input with proper completion
+read_with_completion() {
+    local prompt="$1"
+    local var_name="$2"
+
+    # Use readline to get input with completion
+    READLINE_LINE=""
+    READLINE_POINT=0
+    while true; do
+        read -e -p "$prompt" input
+        eval "$var_name=\"$input\""
+        return 0
+    done
+}
 
 # Source entry reminders
 echo "${YELLOW}Source Reminders:"
@@ -20,12 +39,13 @@ echo "1. For source directories, do NOT add a trailing slash (/)"
 echo "2. Paths can be absolute or relative ${RESET}"
 echo
 
-# Prompt for source (using simplified read -e)
-read -e -p "${CYAN}Enter the source file or directory: ${RESET}" source
-# Safer tilde expansion
+# Prompt for the source file or directory
+read_with_completion "${CYAN}Enter the source file or directory: ${RESET}" source
+
+# Expand the tilde (~) if used in the path safely
 source="${source/#~/$HOME}"
 
-# Check if source exists
+# Check if the source exists
 if [[ ! -e "$source" ]]; then
     echo "${RED}Error: Source '$source' does not exist. Please check the path.${RESET}"
     exit 1
@@ -48,11 +68,11 @@ echo "3. Do NOT add a trailing slash (/), but you can use (~) for the home direc
 echo "4. Example: Directory: ~/.config ${RESET}"
 echo
 
-# Prompt for destination directory (simplified)
-read -e -p "${CYAN}Enter the directory for the symlink: ${RESET}" dest_dir
-# Safer tilde expansion
+# Prompt for the destination directory
+read_with_completion "${CYAN}Enter the directory for the symlink: ${RESET}" dest_dir
+
+# Expand tilde for dest_dir safely
 dest_dir="${dest_dir/#~/$HOME}"
-# Remove trailing slash
 dest_dir="${dest_dir%/}"
 
 # Determine symlink name
@@ -63,10 +83,7 @@ echo
 if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     symlink_name="$default_symlink_name"
 else
-    while [[ -z "$symlink_name" || "$symlink_name" =~ / ]]; do
-        echo "${RED}Please enter a valid symlink name without slashes:${RESET}"
-        read -e -p "${CYAN}Enter the name for the symlink: ${RESET}" symlink_name
-    done
+    read_with_completion "${CYAN}Enter the name for the symlink: ${RESET}" symlink_name
 fi
 
 destination="$dest_dir/$symlink_name"

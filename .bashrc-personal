@@ -1,6 +1,11 @@
 # PATH setting
 export PATH="$HOME/.bin-personal:$HOME/bin:$PATH:/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+# Source bash completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+fi
+
 # Default editor
 export EDITOR='micro'
 export VISUAL='micro'
@@ -9,10 +14,13 @@ export VISUAL='micro'
 alias update='paru -Syu; flatpak update -y'
 
 # Micro editor
-alias mbp='micro $HOME/.bashrc-personal'
+alias mbp='$EDITOR $HOME/.bashrc-personal'
 
 # Shortcut to start copyq flatpak
 alias copyq='flatpak run com.github.hluk.copyq'
+
+# Remove the locked pacman database
+alias pacman-lock='sudo rm /var/lib/pacman/db.lck'
 
 # Create a symlink
 alias symlink='$HOME/.bin-personal/create-symlink.sh'
@@ -23,19 +31,17 @@ alias bashup='source ~/.bashrc'
 # Adding flags
 alias cp='cp -i'
 
+# Switch between hdmi and external speaker
+alias tohdmi='pacmd set-card-profile 0 output:hdmi-stereo && pactl set-default-sink alsa_output.pci-0000_00_1f.3.hdmi-stereo'
+alias toaux='pacmd set-card-profile 0 output:analog-stereo && pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo'
+
 # Tab, tab completion for warp terminal
    if [ -f /etc/bash_completion ]; then
        . /etc/bash_completion
    fi
 
-# Adding an alias to run notifacation history
-alias notif='$HOME/.bin-personal/notifications-history.sh'
-
-# Use ripgrep instead of grep
-alias grep='rg'
-
-# Use fd instead of find for better search
-alias find='fd'
+# Edit pacman with micro
+alias mpacman='sudo $EDITOR /etc/pacman.conf'
 
 # Download YouTube video
 #alias youtube='$HOME/.bin-personal/youtube-download.sh'
@@ -61,4 +67,4 @@ alias sr='sudo reboot'
 alias blue='bluetoothctl'
 
 # Run previous command as sudo
-alias s='sudo $(history -p !!)'
+alias sh='sudo $(history -p !!)'
