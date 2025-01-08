@@ -12,7 +12,7 @@ set $alt Mod1
 set $terminal xfce4-terminal
 
 # Set your preferred browser (brave, firefox, chromium)
-set $browser brave
+set $browser brave --profile-directory="Default"
 
 # Set your preferred file manager (thunar, nemo, nautilus)
 set $fileManager thunar
@@ -109,12 +109,12 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/1920x1080/tesla-car-red-left-1920x1080.jpeg &
-# Currently using the browser extension which has split tunneling. I onlye
+# Currently using the browser extension which has split tunneling. I only
 # need to use the app when I use qbittorrent
 #exec --no-startup-id ~/.bin-personal/start-protonvpn.sh
 exec --no-startup-id eval "$(ssh-agent -s)"
 exec_always --no-startup-id pasystray &
-exec_always --no-startup-id autotiling
+exec_always --no-startup-id ~/.bin-personal/autotiling.py
 #exec --no-startup-id numlockx on
 
 # Application Keyboard Shortcuts
