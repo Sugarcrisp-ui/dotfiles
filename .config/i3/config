@@ -101,6 +101,7 @@ bindsym $mod+f fullscreen toggle
 exec --no-startup-id $browser
 exec --no-startup-id insync start & disown
 exec --no-startup-id nm-applet &
+exec --no-startup-id protonvpn-app --start-minimized
 exec --no-startup-id copyq &
 exec --no-startup-id pamac-tray &
 exec --no-startup-id blueman-applet &
