@@ -2,7 +2,6 @@
 set $focusedBorderColor #6790EB #Sky blue
 set $unfocusedBorderColor #222222 #Dark gray, nearly black
 set $textColor #e5e5e5 #Light gray or platinum
-set $backgroundBorderColor #242424 #Very dark gray, almost black
 
 # Set mod keys
 set $mod Mod4
@@ -21,22 +20,21 @@ set $fileManager thunar
 set $editor subl
 
 # Gaps Definitions
-gaps inner 0
+gaps inner 5
 gaps outer 0
+smart_gaps on
 
 # Workspaces
-set $firstMonitor HDMI1
-set $secondMonitor HDMI2
 workspace 1 output $firstMonitor
 workspace 2 output $firstMonitor
 workspace 3 output $firstMonitor
 workspace 4 output $firstMonitor
 workspace 5 output $firstMonitor
-workspace 6 output $secondMonitor
-workspace 7 output $secondMonitor
-workspace 8 output $secondMonitor
-workspace 9 output $secondMonitor
-workspace 10 output $secondMonitor
+workspace 6 output $firstMonitor
+workspace 7 output $firstMonitor
+workspace 8 output $firstMonitor
+workspace 9 output $firstMonitor
+workspace 10 output $firstMonitor
 
 # Workspace Switching
 bindsym $mod+1 workspace number 1
@@ -99,23 +97,23 @@ bindsym $mod+f fullscreen toggle
 
 # Autostart
 exec --no-startup-id $browser
-exec --no-startup-id insync start & disown
 exec --no-startup-id nm-applet &
-exec --no-startup-id protonvpn-app --start-minimized
-exec --no-startup-id copyq &
-exec --no-startup-id pamac-tray &
-exec --no-startup-id blueman-applet &
 exec --no-startup-id bluetooth-autoconnect &
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/1920x1080/tesla-car-red-left-1920x1080.jpeg &
-# Currently using the browser extension which has split tunneling. I only
-# need to use the app when I use qbittorrent
-#exec --no-startup-id ~/.bin-personal/start-protonvpn.sh
 exec --no-startup-id eval "$(ssh-agent -s)"
-exec_always --no-startup-id pasystray &
-exec_always --no-startup-id ~/.bin-personal/autotiling.py
+exec_always --no-startup-id [ -x ~/.bin-personal/autotiling.py ] && ~/.bin-personal/autotiling.py
+exec --no-startup-id ~/.bin-personal/set-monitor.sh
+
+# Delayed non-critical apps
+exec --no-startup-id sh -c "sleep 2 && protonvpn-app --start-minimized &"
+exec --no-startup-id sh -c "sleep 3 && copyq &"
+exec --no-startup-id sh -c "sleep 4 && blueman-applet &"
+exec --no-startup-id sh -c "sleep 5 && pamac-tray &"
+exec --no-startup-id sh -c "sleep 6 && pasystray &"
+exec --no-startup-id sh -c "sleep 7 && insync start & disown"
 #exec --no-startup-id numlockx on
 
 # Application Keyboard Shortcuts
@@ -145,40 +143,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 # Set default window border size
 for_window[class=".*"] border pixel 4
 
-# Border Control
-# --------------------------------
-# Toggle window borders between normal, 2 pixel, and none.
-bindsym $mod+shift+b border pixel 4
-bindsym $mod+t border normal
-bindsym $mod+u border none
-
 # Enable smart borders
 smart_borders on
-
-# Enable smart gaps to auto adjust outer gaps when only one window is present
-smart_gaps on
-
-mode "$mode_gaps_inner" {
-    bindsym plus gaps inner current plus 5
-    bindsym minus gaps inner current minus 5
-    bindsym 0 gaps inner current set 0
-    bindsym Shift+plus gaps inner all plus 5
-    bindsym Shift+minus gaps inner all minus 5
-    bindsym Shift+0 gaps inner all set 0
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_outer" {
-    bindsym plus gaps outer current plus 5
-    bindsym minus gaps outer current minus 5
-    bindsym 0 gaps outer current set 0
-    bindsym Shift+plus gaps outer all plus 5
-    bindsym Shift+minus gaps outer all minus 5
-    bindsym Shift+0 gaps outer all set 0
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 
 # Picom Transparency Control (if you use picom)
 # Commented out as it might not be needed
@@ -186,6 +152,8 @@ mode "$mode_gaps_outer" {
 
 # Border Color Settings
 client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+client.unfocused        #222222 #222222 #e5e5e5 #222222
+client.focused_inactive #222222 #222222 #e5e5e5 #222222
 client.background       #242424
 
 # Floating Window Modifier
