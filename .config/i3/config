@@ -125,8 +125,9 @@ bindsym $mod+s exec --no-startup-id $editor
 bindsym Control+$alt+j exec --no-startup-id joplin-desktop
 bindsym $mod+Shift+Return exec --no-startup-id $fileManager
 bindsym $mod+w exec --no-startup-id $browser
-bindsym Control+$alt+f exec --no-startup-id firefox
+#bindsym Control+$alt+f exec --no-startup-id firefox
 bindsym Control+$alt+p exec --no-startup-id xfce4-screenshooter
+#bindsym Control+$alt+v exec --no-startup-id xfce4-terminal -e "bash /home/brett/.bin-personal/realvnc-viewer.sh"
 
 # Audio Control
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse set Master '5%+'"

@@ -9,7 +9,7 @@ modi: "window,drun,ssh,run";/*  width: 50;*/
 /*  yoffset: 0;*/
 /*  xoffset: 0;*/
 /*  fixed-num-lines: true;*/
-/*  show-icons: false;*/
+show-icons: true;
 /*  terminal: "rofi-sensible-terminal";*/
 /*  ssh-client: "ssh";*/
 /*  ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -19,10 +19,10 @@ modi: "window,drun,ssh,run";/*  width: 50;*/
 /*  window-command: "wmctrl -i -R {window}";*/
 /*  window-match-fields: "all";*/
 /*  icon-theme: ;*/
-/*  drun-match-fields: "name,generic,exec,categories,keywords";*/
+drun-match-fields: "name";
 /*  drun-categories: ;*/
 /*  drun-show-actions: false;*/
-/*  drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+drun-display-format: "{name}";
 /*  drun-url-launcher: "xdg-open";*/
 /*  disable-history: false;*/
 /*  ignored-prefixes: "";*/
@@ -36,7 +36,7 @@ modi: "window,drun,ssh,run";/*  width: 50;*/
 /*  parse-hosts: false;*/
 /*  parse-known-hosts: true;*/
 /*  combi-modi: "window,run";*/
-/*  matching: "normal";*/
+matching: "normal";
 /*  tokenize: true;*/
 /*  m: "-5";*/
 /*  line-margin: 2;*/
