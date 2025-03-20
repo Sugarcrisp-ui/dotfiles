@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=RealVNC Viewer (Docker)
+Exec=xfce4-terminal -e "/home/brett/.bin-personal/realvnc-viewer.sh"
+Icon=realvnc
+Categories=Network;RemoteAccess;

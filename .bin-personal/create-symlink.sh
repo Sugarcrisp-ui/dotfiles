@@ -22,7 +22,7 @@ validate_path() {
 
 validate_symlink_name() {
     local name="$1"
-    if [[ "$name" =~ ^[[:space:]]*$ || "$name" =~ [/\*\?\<\>\|] ]]; then
+    if [[ -z "$name" || "$name" =~ / ]]; then
         return 1
     fi
     return 0
@@ -33,10 +33,8 @@ check_infinite_loop() {
     local destination="$2"
     local source_real=$(realpath -m "$source")
     local dest_real=$(realpath -m "$destination")
-    
-    # Only flag an error if the resolved paths are identical
     if [[ "$source_real" == "$dest_real" ]]; then
-        echo "${RED}Error: Infinite loop detected - source and destination resolve to the same path${RESET}"
+        echo "${RED}Error: Infinite loop detected${RESET}"
         exit 1
     fi
 }
@@ -45,8 +43,7 @@ create_symlink() {
     local source="$1"
     local destination="$2"
     if ln -s "$source" "$destination"; then
-        echo "${GREEN}Success! Symlink created:"
-        echo "  $destination -> $source${RESET}"
+        echo "${GREEN}Success! Symlink created: $destination -> $source${RESET}"
     else
         echo "${RED}Failed to create symlink${RESET}"
         exit 1
@@ -56,11 +53,24 @@ create_symlink() {
 # Handle interrupts
 trap 'echo "${RED}Script interrupted${RESET}; exit 1' INT TERM
 
-# Parse force option
-if [[ "$1" == "--force" || "$1" == "-f" ]]; then
-    FORCE=1
-    shift
-fi
+# Parse options
+while [[ "$1" == -* ]]; do
+    case "$1" in
+        --force|-f)
+            FORCE=1
+            shift
+            ;;
+        --help|-h)
+            echo "Usage: $0 [--force]"
+            echo "  --force, -f: Overwrite existing symlinks"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
 
 # Main script
 clear
@@ -75,10 +85,9 @@ echo "1. For directories, do NOT add a trailing slash (/)"
 echo "2. Paths can be absolute or relative${RESET}"
 echo
 read -e -p "${CYAN}Enter the source file or directory: ${RESET}" source
-source=$(realpath -m "$source")  # Normalize path
+source=$(realpath -m "$source")
 validate_path "$source"
 
-# Show source type
 if [[ -d "$source" ]]; then
     echo "${GREEN}Selected source is a directory${RESET}"
 else
@@ -88,50 +97,55 @@ echo
 
 # Destination entry
 echo "${YELLOW}Destination Reminders:"
-echo "1. Specify the directory where the symlink will be created"
+echo "1. Specify the directory for the symlink"
 echo "2. Paths can be absolute or relative"
-echo "3. Do NOT add a trailing slash (/), but you can use (~) for home"
-echo "4. Example: ~/.config ${RESET}"
+echo "3. Example: ~/.config${RESET}"
 echo
 read -e -p "${CYAN}Enter the directory for the symlink: ${RESET}" dest_dir
-dest_dir=$(realpath -m "$dest_dir")  # Normalize path
+dest_dir=$(realpath -m "$dest_dir")
 
-# Determine symlink name
+# Symlink name
 default_symlink_name=$(basename "$source")
 echo
-read -p "${CYAN}Use default symlink name '$default_symlink_name'? [Y/n]: ${RESET}" -n 1 -r
+read -p "${CYAN}Use default name '$default_symlink_name'? [Y/n]: ${RESET}" -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Nn]$ ]]; then
     symlink_name="$default_symlink_name"
 else
     while ! validate_symlink_name "$symlink_name"; do
-        echo "${RED}Please enter a valid name (no slashes or special chars):${RESET}"
-        read -e -p "${CYAN}Enter the name for the symlink: ${RESET}" symlink_name
+        echo "${RED}Enter a valid name (no slashes or empty):${RESET}"
+        read -e -p "${CYAN}Enter the symlink name: ${RESET}" symlink_name
     done
 fi
 
 destination="$dest_dir/$symlink_name"
 
-# Check and create destination directory
+# Check if destination is a directory
+if [[ -d "$destination" ]]; then
+    echo "${RED}Error: '$destination' is a directory. Cannot overwrite.${RESET}"
+    exit 1
+fi
+
+# Create destination directory if needed
 if [[ ! -d "$dest_dir" ]]; then
     if ! mkdir -p "$dest_dir"; then
-        echo "${RED}Error: Failed to create '$dest_dir'. Check permissions.${RESET}"
+        echo "${RED}Error: Failed to create '$dest_dir'.${RESET}"
         exit 1
     else
         echo "${YELLOW}Created directory: $dest_dir${RESET}"
     fi
 fi
 
-# Check if destination exists
+# Handle existing destination
 if [[ -e "$destination" ]]; then
     if [[ "$FORCE" -eq 1 ]]; then
         rm -f "$destination" || {
-            echo "${RED}Error: Failed to remove existing '$destination'${RESET}"
+            echo "${RED}Error: Failed to remove '$destination'${RESET}"
             exit 1
         }
         echo "${YELLOW}Overwriting existing symlink${RESET}"
     else
-        echo "${RED}Error: '$destination' exists. Use -f or --force to overwrite.${RESET}"
+        echo "${RED}Error: '$destination' exists. Use --force to overwrite.${RESET}"
         exit 1
     fi
 fi
@@ -143,7 +157,7 @@ check_infinite_loop "$source" "$destination"
 read -p "${YELLOW}Create '$destination' -> '$source'? [Y/n]: ${RESET}" -n 1 -r
 echo
 if [[ ! "$REPLY" =~ ^[Yy]$ && -n "$REPLY" ]]; then
-    echo "Symlink creation cancelled."
+    echo "Cancelled."
     exit 0
 fi
 
