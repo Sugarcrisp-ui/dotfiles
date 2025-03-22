@@ -2,3 +2,4 @@
 .local/state/warp-terminal/warp_network.log
 .config/micro/buffers/
 /.config/micro/buffers
+.config/micro/buffers/history
