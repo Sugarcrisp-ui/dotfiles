@@ -106,7 +106,6 @@ exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/1920x1
 exec --no-startup-id eval "$(ssh-agent -s)"
 exec_always --no-startup-id [ -x ~/.bin-personal/autotiling.py ] && ~/.bin-personal/autotiling.py
 exec --no-startup-id ~/.bin-personal/set-monitor.sh
-exec --no-startup-id x11vnc -display :0 -usepw -forever
 
 # Delayed non-critical apps
 exec --no-startup-id sh -c "sleep 2 && protonvpn-app --start-minimized &"

@@ -1,7 +1,8 @@
 [Desktop Entry]
-Version=1.0
+Name=RealVNC Viewer
+Comment=Launch RealVNC Viewer for remote desktop access
+Exec=/usr/bin/vncviewer
+Terminal=false
 Type=Application
-Name=RealVNC Viewer (Docker)
-Exec=xfce4-terminal -e "/home/brett/.bin-personal/realvnc-viewer.sh"
-Icon=realvnc
+Icon=vncviewer
 Categories=Network;RemoteAccess;

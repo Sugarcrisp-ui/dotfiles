@@ -1,6 +1,6 @@
 #!/bin/bash
 xhost +local:docker > /dev/null 2>&1
-docker run -it --rm \
+docker run -d --rm \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v "$HOME/.vnc/realvnc:/root/.vnc" \
