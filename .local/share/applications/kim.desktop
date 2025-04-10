@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=kim
+Exec=brave --profile-directory="Profile 2"
+Icon=brave
+Terminal=false
+Categories=Network;WebBrowser;
