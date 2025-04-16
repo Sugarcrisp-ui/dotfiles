@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Google Keep
+Comment=
+Exec=brave --app="https://keep.google.com/"
+Icon=/home/brett/Pictures/google-keep-icon.png
+Terminal=false
+Type=Application
+Categories=Calendar;

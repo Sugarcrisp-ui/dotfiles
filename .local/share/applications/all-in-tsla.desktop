@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Tesla All In
+Comment=
+Exec=brave --app="https://docs.google.com/spreadsheets/d/1-xaJi5YRPnNRDQSZfzk0LZCpuSE1SaIAsXRhwAXGOWY/edit?gid=199894848#gid=199894848"
+Icon=/home/brett/Pictures/tesla-icon.svg
+Terminal=false
+Type=Application
+Categories=Finance;

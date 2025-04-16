@@ -1,0 +1,7 @@
+{
+    "colorscheme": "atom-dark",
+    "clipboard": "external",
+    "filetype": {
+        ".crontab": "crontab"
+    }
+}

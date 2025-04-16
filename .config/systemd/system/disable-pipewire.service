@@ -1,0 +1,13 @@
+[Unit]
+Description=Disable PipeWire Services at Boot
+Before=pipewire.service pipewire-pulse.service wireplumber.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl --user disable pipewire.service
+ExecStart=/bin/systemctl --user disable pipewire-pulse.service
+ExecStart=/bin/systemctl --user disable wireplumber.service
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

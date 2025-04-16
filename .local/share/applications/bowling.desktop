@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Bowling
+Comment=
+Exec=brave --app="https://docs.google.com/spreadsheets/d/1r4j6ndja2V2saGk4_ZjBVAliWYPnrznO7rdxforpHNI/edit?gid=302683978#gid=302683978"
+Icon=/home/brett/Pictures/bowling-icon.png
+Terminal=false
+Type=Application
+Categories=
