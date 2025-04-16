@@ -1,6 +1,6 @@
-.local/share/Trash/
-.local/state/warp-terminal/warp_network.log
-.config/micro/buffers/history
 .bin-personal/
+.local/state/warp-terminal/
 .local/share/warp-terminal/
 *.log
+.local/share/Trash/
+.config/micro/buffers/history
