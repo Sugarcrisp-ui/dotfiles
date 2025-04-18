@@ -102,7 +102,7 @@ exec --no-startup-id bluetooth-autoconnect &
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id dunst &
-exec --no-startup-id feh --bg-fill /home/brett/Pictures/background-images/1920x1080/tesla-car-red-left-1920x1080.jpeg &
+exec --no-startup-id ~/.bin-personal/set-wallpaper.sh
 exec --no-startup-id eval "$(ssh-agent -s)"
 exec_always --no-startup-id [ -x ~/.bin-personal/autotiling.py ] && ~/.bin-personal/autotiling.py
 exec --no-startup-id ~/.bin-personal/set-monitor.sh
