@@ -2,6 +2,7 @@
 PERSONAL_BIN="$HOME/.bin-personal"
 export EDITOR='micro'
 export VISUAL='micro'
+export TERM=xterm-256color
 
 # This ensures new files aren’t executable by default.
 umask 022

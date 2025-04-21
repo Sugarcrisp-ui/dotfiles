@@ -11,13 +11,11 @@ set $alt Mod1
 set $terminal xfce4-terminal
 
 # Set your preferred browser (brave, firefox, chromium)
-set $browser brave --profile-directory="Default"
+#set $browser brave --profile-directory="Default"
+set $browser sh -c '[ -f /etc/arch-release ] && brave --profile-directory="Default" || brave-browser --profile-directory="Default"'
 
 # Set your preferred file manager (thunar, nemo, nautilus)
 set $fileManager thunar
-
-# Set your preferred editor (subl, code, geany, cursor)
-#set $editor subl
 
 # Gaps Definitions
 gaps inner 5
@@ -76,7 +74,10 @@ bindsym Control+$alt+m exec --no-startup-id xfce4-settings-manager
 bindsym $mod+x exec --no-startup-id archlinux-logout
 
 # Screen Lock
-bindsym Control+Mod1+l exec --no-startup-id ~/.bin-personal/lock-screen.sh
+bindsym Control+Mod1+k exec --no-startup-id /home/brett/.bin-personal/lock-screen.sh
+
+# Suspend
+bindsym Control+Mod1+l exec --no-startup-id ~/.bin-personal/suspend-lock.sh
 
 # Reload Configuration
 bindsym $mod+Shift+c reload
@@ -108,8 +109,10 @@ exec --no-startup-id sh -c '[ -f /etc/arch-release ] && /usr/lib/polkit-gnome/po
 exec --no-startup-id dunst &
 exec --no-startup-id ~/.bin-personal/set-wallpaper.sh
 exec --no-startup-id eval "$(ssh-agent -s)"
-exec_always --no-startup-id [ -x ~/.bin-personal/autotiling.py ] && ~/.bin-personal/autotiling.py
+# Run autotiling script only on Linux Mint
+exec --no-startup-id bash -c '[ "$(grep -i "^NAME=" /etc/os-release)" = "NAME=\"Linux Mint\"" ] && ~/i3ipc-venv/bin/python ~/.bin-personal/autotiling.py'
 exec --no-startup-id ~/.bin-personal/set-monitor.sh
+exec --no-startup-id sh -c '[ ! -f /etc/arch-release ] && ibus exit'
 
 # Delayed non-critical apps
 exec --no-startup-id sh -c "sleep 2 && protonvpn-app --start-minimized &"
@@ -118,13 +121,13 @@ exec --no-startup-id sh -c "sleep 4 && blueman-applet &"
 exec --no-startup-id sh -c "sleep 5 && pamac-tray &"
 exec --no-startup-id sh -c "sleep 6 && pasystray &"
 exec --no-startup-id sh -c "sleep 7 && insync start & disown"
-#exec --no-startup-id numlockx on
+exec --no-startup-id numlockx on
 
 # Application Keyboard Shortcuts
 # -------------------------------
 bindsym $mod+Return exec --no-startup-id $terminal;focus
 bindsym $mod+$alt+Return exec warp-terminal
-bindsym $mod+s exec --no-startup-id $editor
+bindsym $mod+s exec --no-startup-id subl
 bindsym Control+$alt+j exec --no-startup-id joplin-desktop
 bindsym $mod+Shift+Return exec --no-startup-id $fileManager
 bindsym $mod+w exec --no-startup-id $browser
