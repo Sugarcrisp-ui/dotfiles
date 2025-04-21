@@ -18,7 +18,7 @@ for m in $(xrandr --query | grep "connected" | cut -d" " -f1); do
     # Launch desktop bar with config file and --reload
     MONITOR=$m polybar --reload mainbar-i3-desktop -c ~/.config/polybar/config.ini
 
-  elif [ "$HOSTNAME" == "brett-K501UX" ]; then
+  elif [ "$HOSTNAME" == "brett-k501ux" ]; then
 
     # Launch laptop bar with config file and --reload 
     MONITOR=$m polybar --reload mainbar-i3-laptop -c ~/.config/polybar/config.ini

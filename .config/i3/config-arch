@@ -17,7 +17,7 @@ set $browser brave --profile-directory="Default"
 set $fileManager thunar
 
 # Set your preferred editor (subl, code, geany, cursor)
-#set $editor subl
+set $editor subl
 
 # Gaps Definitions
 gaps inner 5
@@ -73,8 +73,7 @@ bindsym $mod+d exec rofi -show drun -font "Noto Sans 13"
 bindsym Control+$alt+m exec --no-startup-id xfce4-settings-manager
 
 # Logout
-#bindsym $mod+x exec --no-startup-id archlinux-logout
-bindsym $mod+x exec --no-startup-id sh -c '[ -f /etc/arch-release ] && archlinux-logout || xfce4-session-logout'
+bindsym $mod+x exec --no-startup-id archlinux-logout
 
 # Screen Lock
 bindsym Control+Mod1+l exec --no-startup-id ~/.bin-personal/lock-screen.sh
@@ -104,8 +103,7 @@ exec --no-startup-id $browser
 exec --no-startup-id nm-applet &
 exec --no-startup-id bluetooth-autoconnect &
 exec --no-startup-id ~/.config/polybar/launch.sh
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id sh -c '[ -f /etc/arch-release ] && /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/x86_64-linux-gnu/libexec/polkit-gnome-authentication-agent-1' &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id dunst &
 exec --no-startup-id ~/.bin-personal/set-wallpaper.sh
 exec --no-startup-id eval "$(ssh-agent -s)"
